@@ -12,15 +12,17 @@ public class MainActivity extends AppCompatActivity {
 
     private Button locationbutton;
     private Button winetypebutton;
+    private Button foodtypebutton;
     private Button profilebutton;
     private Button mainactivitybutton;
+    private Button mapbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        locationbutton = (Button) findViewById(R.id.FindLoc);
+        locationbutton = (Button) findViewById(R.id.FindLoc);                                                   // Location button
         locationbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        winetypebutton = (Button) findViewById(R.id.toWineTypeActivity);
+        winetypebutton = (Button) findViewById(R.id.toWineTypeActivity);                                        // Wine Type button
         winetypebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +38,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        profilebutton = (Button) findViewById(R.id.toProfileActivity);
+        foodtypebutton = (Button) findViewById(R.id.toFoodTypeActivity);                                        // Wine Type button
+        foodtypebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, FoodTypeActivity.class));
+            }
+        });
+
+        profilebutton = (Button) findViewById(R.id.toProfileActivity);                                          // Profile button
         profilebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,11 +54,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mainactivitybutton = (Button) findViewById(R.id.toProfileActivity);
+        mainactivitybutton = (Button) findViewById(R.id.toMainActivity);                                        // Home button
         mainactivitybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, MainActivity.class));
+            }
+        });
+
+        mapbutton = (Button) findViewById(R.id.FindLoc);                                                       // Map button
+        mapbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MapsActivity.class));
             }
         });
 
